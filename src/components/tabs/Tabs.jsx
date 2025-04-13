@@ -80,7 +80,7 @@ export const Tabs = () => {
                 }`}
               >
                 <h2>{item.title}</h2>
-                <img src={item.img} alt={item.title} className="tabs-image" />
+                <img src={item.img} alt={item.title} className="tabs-image"  loading="lazy" />
                 <p>{item.description}</p>
                 <button className="tabs-button">{item.button}</button>
               </div>
