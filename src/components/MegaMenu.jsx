@@ -81,7 +81,8 @@ export const MegaMenu = () => {
               <h3>High-End Appliances We Repair</h3>
               <div className="row">
                 {[
-                  [{ label: "Oven Repair", href: "/services/oven-repair-los-angeles/" },
+                  [{label: "Refrigerator Repair", href: "/services/refrigerator-repair-los-angeles/" },
+                    { label: "Oven Repair", href: "/services/oven-repair-los-angeles/" },
                   { label: "Stove Repair", href: "/stove-repair/" },
                   "Range Repair", "Cooktop Repair", "Range Hood Repair"],
                   [{ label: "Wachine Machine Repair", href: "/washing-machine-repair/" },, "Dryer Repair", 
