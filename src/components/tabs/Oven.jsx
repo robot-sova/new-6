@@ -31,22 +31,10 @@ export const Tabs = () => {
    <p>Wall Oven Repair: Popular for saving space, wall ovens require specialized repair knowledge. From door handle repairs to fixing lock-out indicators, our team has the skills to handle all wall oven challenges, including manual lock issues, lock motor stops running, and door lock problems.</p>
    <p>Convection Oven Repair: For even cooking and efficiency, convection ovens rely on fans and precise temperature. Our technicians address fan malfunctions, oven door problems, and other issues so your oven stays locked and performs at an optimal level.</p>
 
-
         </>
       ),
     },
-    {
-      id: "content3",
-      title: "Dishwasher Repair",
-      img: "dishwasher.jpg",
-      description: "A properly functioning dishwasher saves time and energy.",
-    },
-    {
-      id: "content4",
-      title: "Dryer Repair",
-      img: "dryer.jpg",
-      description: "Dryers need periodic checks and maintenance to ensure efficiency.",
-    },
+ 
   ];
 
   useEffect(() => {

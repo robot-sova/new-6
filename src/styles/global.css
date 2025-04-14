@@ -506,6 +506,7 @@ h1 {
   }
   .tab-body-float {
     overflow: hidden; /* Clear float properly */
+    text-align:justify;
   }
   
   .image-float {
