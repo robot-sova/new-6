@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Reviews.css"; // Move styles to a CSS file for better separation
+import "./tabs/Tabs.css"; // Move styles to a CSS file for better separation
 
 const Reviews = () => {
   const [isLoaded, setIsLoaded] = useState(false);
