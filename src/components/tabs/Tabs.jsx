@@ -72,7 +72,9 @@ export const Tabs = () => {
               {activeTab === item.id && (
                 <div className="accordion-content">
                   <h2>{item.title}</h2>
-                  <img src={item.img} alt={item.title} className="image-float" loading="lazy" />
+                  {item.img && (
+  <img src={item.img} alt={item.title} className="image-float" loading="lazy" />
+)}
                   <p>{item.description}</p>
                   <button className="tabs-button">{item.button}</button>
                 </div>

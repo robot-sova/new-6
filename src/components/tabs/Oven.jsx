@@ -112,7 +112,9 @@ export const Tabs = () => {
              <div className={`tab-panel ${activeTab === item.id ? "active-tab" : ""}`}>
              <h2>{item.title}</h2>
              <div className="tab-body-float">
-               <img src={item.img} alt={item.title} className="image-float" />
+             {item.img && (
+  <img src={item.img} alt={item.title} className="image-float" loading="lazy" />
+)}
                <div>{item.description}</div>
              </div>
              <a href="#form">
@@ -143,7 +145,9 @@ export const Tabs = () => {
               {activeTab === item.id && (
                <div className="accordion-content">
                <h2>{item.title}</h2>
-               <img src={item.img} alt={item.title} className="image-float" />
+               {item.img && (
+  <img src={item.img} alt={item.title} className="image-float" loading="lazy" />
+)}
                <div>{item.description}</div>
                <a href="#form">
   <button className="tabs-button">Book</button>
