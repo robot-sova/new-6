@@ -1,22 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './Tabs.css';
+import React, { useState, useEffect, useRef } from "react";
+import "./Tabs.css";
 
 export const Tabs = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [activeTab, setActiveTab] = useState('content1');
+  const [activeTab, setActiveTab] = useState("content1");
   const containerRef = useRef(null);
 
   const items = [
-   
-  ];
+
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -28,9 +27,7 @@ export const Tabs = () => {
               <div
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`tabs-title ${
-                  activeTab === item.id ? 'active' : ''
-                }`}
+                className={`tabs-title ${activeTab === item.id ? "active" : ""}`}
               >
                 {item.title}
               </div>
@@ -38,19 +35,21 @@ export const Tabs = () => {
           </div>
           <div className="tabs-content">
             {items.map((item) => (
-              <div
-                key={item.id}
-                className={`tab-panel ${
-                  activeTab === item.id ? 'active-tab' : ''
-                }`}
-              >
-                <h2>{item.title}</h2>
-                {item.img && (
+             <div className={`tab-panel ${activeTab === item.id ? "active-tab" : ""}`}>
+             <h2>{item.title}</h2>
+             <div className="tab-body-float">
+             {item.img && (
   <img src={item.img} alt={item.title} className="image-float" loading="lazy" />
 )}
-                <p>{item.description}</p>
-                <button className="tabs-button">{item.button}</button>
-              </div>
+               <div>{item.description}</div>
+             </div>
+             <a href="#form">
+  <button className="tabs-button">Book</button>
+</a>
+<a href="tel:3238704790">
+  <button className="tabs-button">Call: (323) 870-4790</button>
+</a>
+           </div>
             ))}
           </div>
         </div>
@@ -66,18 +65,23 @@ export const Tabs = () => {
               >
                 {item.title}
                 <span className="accordion-icon">
-                  {activeTab === item.id ? '−' : '+'}
+                  {activeTab === item.id ? "−" : "+"}
                 </span>
               </div>
               {activeTab === item.id && (
-                <div className="accordion-content">
-                  <h2>{item.title}</h2>
-                  {item.img && (
+               <div className="accordion-content">
+               <h2>{item.title}</h2>
+               {item.img && (
   <img src={item.img} alt={item.title} className="image-float" loading="lazy" />
 )}
-                  <p>{item.description}</p>
-                  <button className="tabs-button">{item.button}</button>
-                </div>
+               <div>{item.description}</div>
+               <a href="#form">
+  <button className="tabs-button">Book</button>
+</a>
+<a href="tel:3238704790">
+  <button className="tabs-button">Call: (323) 870-4790</button>
+</a>
+             </div>
               )}
             </div>
           ))}
