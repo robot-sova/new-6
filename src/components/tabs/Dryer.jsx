@@ -1,139 +1,131 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './Tabs.css';
+import React, { useState, useEffect, useRef } from "react";
+import "./Tabs.css";
 
 export const Tabs = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [activeTab, setActiveTab] = useState('content1');
+  const [activeTab, setActiveTab] = useState("content1");
   const containerRef = useRef(null);
 
-  import React from "react";
-import { Btn } from "@/components/Btn";
-
-export const WashingMachineContent = () => {
-  return (
-    <>
-      <section id="content1" className="page213-content">
-        <div className="content__page-full-hed">
-          <div className="content__page-hed-h">
-            <h2><strong>Why Choose Same Day Appliance Repair for Washing Machine Repair?</strong></h2>
-          </div>
-        </div>
-        <div className="content__page-full-desc">
-          <div className="content__page-desc-phot">
-            <img src="/washer-repair/washer1.webp" loading="lazy" width="400" height="500" alt="Washer repair service Los Angeles" />
-          </div>
-          <p>When you choose <strong>Same Day Appliance Repair</strong>, you trust a team of certified technicians with the right tools, <strong>parts</strong>, and expertise to handle any <strong>machine repair</strong> job. Here's why we stand out:</p>
+  const items = [
+    {
+      id: "why-us",
+      title: "Why Choose Same Day Appliance Repair for Dryer Repair Services?",
+      img: "/dryer-repair/dryer-repair-1.webp",
+      description: (
+        <>
+          <p>When you select <strong>Same Day Appliance Repair</strong>, you're opting for expert technicians who can <strong>diagnose</strong> your <strong>dryer issues</strong>, find <strong>fast fixes</strong>, and provide ongoing maintenance tips to extend your appliance's <strong>life</strong>.</p>
           <ul>
-            <li><p><strong>Same-Day Service:</strong> We offer <strong>same-day repair services</strong> to get your <strong>washer</strong> back to <strong>working correctly</strong>.</p></li>
-            <li><p><strong>Trained Technicians:</strong> Certified experts in <strong>washing machine repair</strong> for all brands and models.</p></li>
-            <li><p><strong>Use of Original Parts:</strong> Only high-quality parts from trusted suppliers ensure efficiency and longevity.</p></li>
-            <li><p><strong>Transparent Pricing:</strong> No hidden fees—accurate quotes for <strong>labor and parts</strong> upfront.</p></li>
+            <li><p><strong>Same-Day Appointments:</strong> Flexible scheduling around your routine.</p></li>
+            <li><p><strong>Certified Technicians:</strong> Trained across major dryer brands and models.</p></li>
+            <li><p><strong>Use of Original Parts:</strong> OEM parts backed by warranties.</p></li>
+            <li><p><strong>Transparent Pricing:</strong> Upfront quotes—no hidden fees.</p></li>
           </ul>
-        </div>
-        <Btn />
-      </section>
-
-      <section id="content2" className="page213-content">
-        <div className="content__page-full-hed">
-          <div className="content__page-hed-h">
-            <h2><strong>Types of Washing Machines We Repair</strong></h2>
-          </div>
-        </div>
-        <div className="content__page-full-desc">
-          <div className="content__page-desc-phot">
-            <img src="/washer-repair/washer2.webp" width="450" height="450" alt="Best Washer repair service" loading="lazy" />
-          </div>
-          <p>Our <strong>washing machine repair</strong> services extend across different <strong>washer</strong> types and models:</p>
-          <p><strong>Top-Loading Washers:</strong> We fix agitator malfunctions, lid switch failures, and pump clogs.</p>
-          <p><strong>Front-Loading Washers:</strong> We address door seal leaks, mold buildup, and motor issues.</p>
-          <p><strong>High-Efficiency Washers:</strong> We handle detergent-related clogs and water flow adjustments.</p>
-          <p><strong>Compact Washers:</strong> We resolve drainage and spin cycle issues in space-saving models.</p>
-        </div>
-        <Btn />
-      </section>
-
-      <section id="content3" className="page213-content">
-        <div className="content__page-full-hed">
-          <div className="content__page-hed-h">
-            <h2><strong>Common Washing Machine Problems We Fix</strong></h2>
-          </div>
-        </div>
-        <div className="content__page-full-desc">
-          <div className="content__page-desc-phot">
-            <img src="/washer-repair/washer3.webp" width="450" height="450" alt="Washer repair near me" loading="lazy" />
-          </div>
-          <p>We frequently resolve the following <strong>washing machine</strong> problems:</p>
+        </>
+      ),
+    },
+    {
+      id: "types",
+      title: "Types of Dryers We Repair and Our Specialized Approach",
+      img: "/dryer-repair/dryer-repair-2.webp",
+      description: (
+        <>
+          <p>We repair a wide range of dryers:</p>
+          <h3><strong>Electric Dryer Repair</strong></h3>
+          <p>Fixing faulty thermostats, heating elements, and connections.</p>
+          <h3><strong>Gas Dryer Repair</strong></h3>
+          <p>Resolving igniter, gas valve, and thermal fuse issues.</p>
+          <h3><strong>Vented Dryer Repair</strong></h3>
+          <p>Clearing vent clogs and repairing drum belts and fans.</p>
+          <h3><strong>Ventless Dryer Repair</strong></h3>
+          <p>Diagnosing filter clogs, condensation, and airflow challenges.</p>
+        </>
+      ),
+    },
+    {
+      id: "problems",
+      title: "Common Dryer Problems We Fix",
+      img: "/dryer-repair/dryer-repair-6.webp",
+      description: (
+        <>
           <ul>
-            <li><p><strong>Water Leaks:</strong> Caused by worn hoses, faulty door seals, or clogged pumps.</p></li>
-            <li><p><strong>Drainage Issues:</strong> Clogged hoses or blocked pumps are repaired or replaced.</p></li>
-            <li><p><strong>Agitation Failures:</strong> Caused by motor, belt, or pulley issues—restored with part replacements.</p></li>
-            <li><p><strong>Mold & Smells:</strong> We clean and sanitize units, removing detergent buildup and mold.</p></li>
-            <li><p><strong>Cycle Failures:</strong> We check control boards and motors to restore full functionality.</p></li>
+            <li><p><strong>Dryer Not Heating Properly:</strong> Replacing thermal fuses or heating elements.</p></li>
+            <li><p><strong>Drum Not Spinning:</strong> Repairing motor, pulley, or belt issues.</p></li>
+            <li><p><strong>Unusual Noises:</strong> Fixing drum rollers or bearings.</p></li>
+            <li><p><strong>Overheating or Mid-Cycle Shutoff:</strong> Cleaning vents, checking thermostats.</p></li>
+            <li><p><strong>Door Not Closing:</strong> Adjusting or replacing latch and switches.</p></li>
           </ul>
-        </div>
-        <Btn />
-      </section>
-
-      <section id="content4" className="page213-content">
-        <div className="content__page-full-hed">
-          <div className="content__page-hed-h">
-            <h2><strong>Signs Your Washing Machine Needs Repair - When To Call Us</strong></h2>
-          </div>
-        </div>
-        <div className="content__page-full-desc">
-          <div className="content__page-desc-phot">
-            <img src="/washer-repair/washer6.webp" width="400" height="500" alt="Same Day Washer repair service" loading="lazy" />
-          </div>
-          <ul>
-            <li><p><strong>Persistent Smells:</strong> Often a sign of mold buildup or clogged drainage.</p></li>
-            <li><p><strong>Water Leaks:</strong> Usually related to hose or gasket damage.</p></li>
-            <li><p><strong>Cycle Issues:</strong> Control board or motor malfunctions can interrupt the wash cycle.</p></li>
-            <li><p><strong>No Spin or Agitation:</strong> Can be caused by worn belts or unbalanced loads.</p></li>
-          </ul>
-          <p>Fixing these problems early helps reduce <strong>repair costs</strong> and prolong appliance life.</p>
-        </div>
-        <Btn />
-      </section>
-
-      <section id="content5" className="page213-content">
-        <div className="content__page-full-hed">
-          <div className="content__page-hed-h">
-            <h2><strong>Full-Service Washing Machine Repair for Every Home</strong></h2>
-          </div>
-        </div>
-        <div className="content__page-full-desc">
-          <h3><strong>Kitchen Washing Machine Repair</strong></h3>
-          <p>We handle all washer types—top-loaders, front-loaders, stackables—with same-day service for <strong>drain, drum,</strong> and <strong>motor issues</strong>.</p>
-          <h3><strong>Washing Machine Repair for Large Families</strong></h3>
-          <p>We repair <strong>high-capacity washers</strong> for large households, ensuring <strong>efficient drum operation and temperature control</strong>.</p>
-          <h3><strong>High-End and Built-In Washing Machine Repair</strong></h3>
-          <p>Our technicians specialize in premium brands like <strong>Miele</strong>, <strong>Bosch</strong>, and <strong>Samsung</strong>, offering expert <strong>balancing, diagnostics,</strong> and <strong>panel repairs</strong>.</p>
-          <h3><strong>Specialty Washer Repair</strong></h3>
-          <p>We also service <strong>compact, combo,</strong> and <strong>portable units</strong> with precision repair for flow control and sensor calibration.</p>
-          <p>We offer tailored repair services for any washer. <strong>Contact us today</strong> to schedule your repair appointment.</p>
-        </div>
-        <Btn />
-      </section>
-
-      <section id="content6" className="page213-content">
-        <div className="content__page-full-hed">
-          <div className="content__page-hed-h">
-            <h2><strong>Routine Washing Machine Maintenance Service - Why You Need It</strong></h2>
-          </div>
-        </div>
-        <div className="content__page-full-desc">
-          <p>Routine maintenance helps avoid costly breakdowns and extends appliance life. We recommend:</p>
-          <ul>
-            <li><p><strong>Hose and Filter Inspections:</strong> Prevent blockages and leaks with regular checks.</p></li>
-            <li><p><strong>Balanced Loads:</strong> Maintain internal balance for a smoother wash cycle.</p></li>
-            <li><p><strong>Door and Seal Cleaning:</strong> Reduces mold and maintains sealing efficiency.</p></li>
-          </ul>
-        </div>
-        <Btn />
-      </section>
-    </>
-  );
-};
+        </>
+      ),
+    },
+    {
+      id: "signs",
+      title: "Signs Your Dryer Needs Repair Services– When To Call Us",
+      description: (
+        <>
+          <h3><strong>Extended Drying Times</strong></h3>
+          <p>Often airflow or heating element related.</p>
+          <h3><strong>Unusual Smells</strong></h3>
+          <p>Burnt or musty smells signal clogged vents or motor issues.</p>
+          <h3><strong>Cycle Failure</strong></h3>
+          <p>Failure to start or complete a cycle may require control board repair.</p>
+          <h3><strong>Overheating</strong></h3>
+          <p>Fix airflow issues or thermal fuses to reduce fire risk.</p>
+        </>
+      ),
+    },
+    {
+      id: "industries",
+      title: "Full-Service Dryer Repair for Every Home",
+      description: (
+        <>
+          <h3><strong>Laundry Room Dryer Repair</strong></h3>
+          <p>Repairs for all types including gas, electric, front-load, and top-load dryers.</p>
+          <h3><strong>Dryer Repair for Large Households</strong></h3>
+          <p>Fixing motor strain, temperature issues, and drum damage in high-capacity units.</p>
+          <h3><strong>High-End and Built-In Dryer Repair</strong></h3>
+          <p>Expert repairs for Miele, Bosch, Electrolux luxury models using OEM parts.</p>
+          <h3><strong>Compact and Specialty Dryer Repair</strong></h3>
+          <p>Special care for stackable, ventless, or compact units to ensure efficient use.</p>
+          <p><strong>Contact us today</strong> for fast and reliable dryer repair service.</p>
+        </>
+      ),
+    },
+    {
+      id: "maintenance",
+      title: "Dryer Maintenance for Efficiency and Safety",
+      description: (
+        <>
+          <h3><strong>Dryer Vent Cleaning</strong></h3>
+          <p>Clearing blockages to prevent overheating and reduce fire risks.</p>
+          <h3><strong>Lint Trap Checks</strong></h3>
+          <p>Ensuring clean airflow and protecting internal components.</p>
+          <h3><strong>Electrical Component Inspection</strong></h3>
+          <p>Checking thermostats, elements, and wiring for safe, efficient performance.</p>
+          <p>Schedule regular dryer maintenance to save energy and avoid repairs.</p>
+        </>
+      ),
+    },
+    {
+      id: "repair-replace",
+      title: "Deciding Between Dryer Repair and Replacement",
+      description: (
+        <>
+          <p>If repair costs near 50% of the price of a new unit, replacement may be the smarter investment.</p>
+          <p>We evaluate age, frequency of issues, and energy savings to help guide your choice.</p>
+        </>
+      ),
+    },
+    {
+      id: "contact",
+      title: "Contact Us for Dryer Repair Services in Los Angeles",
+      description: (
+        <>
+          <p>Don’t wait on dryer issues. <strong>Call Same Day Appliance Repair</strong> for fast, affordable service in Los Angeles and nearby areas. We work with all major brands and models.</p>
+        </>
+      ),
+    },
+  ];
+  
 
 
   useEffect(() => {
@@ -141,8 +133,8 @@ export const WashingMachineContent = () => {
       setIsMobile(window.innerWidth <= 768);
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -154,9 +146,7 @@ export const WashingMachineContent = () => {
               <div
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`tabs-title ${
-                  activeTab === item.id ? 'active' : ''
-                }`}
+                className={`tabs-title ${activeTab === item.id ? "active" : ""}`}
               >
                 {item.title}
               </div>
@@ -164,19 +154,21 @@ export const WashingMachineContent = () => {
           </div>
           <div className="tabs-content">
             {items.map((item) => (
-              <div
-                key={item.id}
-                className={`tab-panel ${
-                  activeTab === item.id ? 'active-tab' : ''
-                }`}
-              >
-                <h2>{item.title}</h2>
-                {item.img && (
+             <div className={`tab-panel ${activeTab === item.id ? "active-tab" : ""}`}>
+             <h2>{item.title}</h2>
+             <div className="tab-body-float">
+             {item.img && (
   <img src={item.img} alt={item.title} className="image-float" loading="lazy" />
 )}
-                <p>{item.description}</p>
-                <button className="tabs-button">{item.button}</button>
-              </div>
+               <div>{item.description}</div>
+             </div>
+             <a href="#form">
+  <button className="tabs-button">Book</button>
+</a>
+<a href="tel:3238704790">
+  <button className="tabs-button">Call: (323) 870-4790</button>
+</a>
+           </div>
             ))}
           </div>
         </div>
@@ -192,18 +184,23 @@ export const WashingMachineContent = () => {
               >
                 {item.title}
                 <span className="accordion-icon">
-                  {activeTab === item.id ? '−' : '+'}
+                  {activeTab === item.id ? "−" : "+"}
                 </span>
               </div>
               {activeTab === item.id && (
-                <div className="accordion-content">
-                  <h2>{item.title}</h2>
-                  {item.img && (
+               <div className="accordion-content">
+               <h2>{item.title}</h2>
+               {item.img && (
   <img src={item.img} alt={item.title} className="image-float" loading="lazy" />
 )}
-                  <p>{item.description}</p>
-                  <button className="tabs-button">{item.button}</button>
-                </div>
+               <div>{item.description}</div>
+               <a href="#form">
+  <button className="tabs-button">Book</button>
+</a>
+<a href="tel:3238704790">
+  <button className="tabs-button">Call: (323) 870-4790</button>
+</a>
+             </div>
               )}
             </div>
           ))}
