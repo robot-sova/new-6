@@ -6,7 +6,7 @@ export const Tabs = () => {
   const [activeTab, setActiveTab] = useState("content1");
   const containerRef = useRef(null);
 
-  const items = [
+  const items = []
 
 
   useEffect(() => {
