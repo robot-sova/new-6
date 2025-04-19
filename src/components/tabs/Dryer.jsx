@@ -8,7 +8,7 @@ export const Tabs = () => {
 
   const items = [
     {
-      id: "why-us",
+      id: "ontent1",
       title: "Why Choose Same Day Appliance Repair for Dryer Repair Services?",
       img: "/dryer-repair/dryer-repair-1.webp",
       description: (

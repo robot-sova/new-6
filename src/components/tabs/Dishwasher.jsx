@@ -8,7 +8,7 @@ export const Tabs = () => {
 
   const items = [
     {
-      id: "why-us",
+      id: "ontent1",
       title: "Why Choose Same Day Appliance Repair for Dishwasher Repair Services?",
       img: "/dishwasher/dishwasher-repair-los-angeles.webp",
       description: (
